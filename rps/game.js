@@ -48,9 +48,12 @@ class Game{
         if(isNaN(num || num == undefined || parseInt(num, 10) == false || num == 0)) {
             alert("Please try again with a valid number!");
             num = prompt("How many rounds you would like to play?");
+            return false;
+        } else {
+            return true;
         }
 
-        return true;
+        
     }
 }
     
