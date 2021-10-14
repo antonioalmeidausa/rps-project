@@ -11,18 +11,20 @@ function playGame() {
     // Use game.IsNumerOfRoundsValid() to validate the user input.
     // If the input is valid, use game.setNumberOfRounds(numberOfRounds) to set the number of rounds for the game 
     //  >> Else, try to get the number of rounds for the suer again
-    let numberOfRounds = prompt("How many rounds you would like to play?");
-        debugger;
-        if (game.isNumberOfRoundsValid(parseInt(numberOfRounds)) !== false) {
-            game.setNumberOfRounds(numberOfRounds);
-        } else {
-            game.isNumberOfRoundsValid();
-        }
+    let numberOfRounds; 
+    debugger;
+    do {
+        numberOfRounds = prompt("How many rounds you would like to play?");     
+            if (game.isNumberOfRoundsValid(numberOfRounds) == true) {
+                    game.setNumberOfRounds = numberOfRounds;
+                } else {
+                    alert("Please try again with a valid number greater than 0 and lower than 6!")
+                }
+    } while (game.isNumberOfRoundsValid(numberOfRounds) != true)
 
     //*********************************ADD CODE HERE *************************************/
-    // Call playRound() with a parameter of the round count (1 thru numberOfRounds) for each round 
+    // Call playRound() with a parameter of the round count (1 thru numberOfRounds) for each round
     let count = 1;
-    debugger;
     do {
         playRound(count);
         count++;
